@@ -1,9 +1,13 @@
 import * as React from 'react';
 
-export interface CardBaseProps extends React.HTMLAttributes {
-    children: React.ReactNode;
+export interface ComponentBaseProps
+    extends React.HtmlHTMLAttributes<HTMLElement> {
     className?: string;
-    element?: React.ReactNode;
+    element?: HTMLElement | string | React.ElementType;
+    children?: React.ReactNode;
+}
+
+export interface CardBaseProps extends ComponentBaseProps {
     to?: string;
 }
 
@@ -15,13 +19,6 @@ export interface IconCardProps extends CardBaseProps {
 
 export interface ImageCardProps extends CardBaseProps {
     image: React.ReactNode;
-}
-
-export interface ComponentBaseProps
-    extends React.HtmlHTMLAttributes<HTMLElement> {
-    className?: string;
-    element?: HTMLElement | string | React.ElementType;
-    children?: React.ReactNode;
 }
 
 export interface TitleProps extends ComponentBaseProps {
